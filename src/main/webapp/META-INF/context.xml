@@ -52,7 +52,7 @@
 </Resource>
 
 <Resource 
-	name="my_server_s" 
+	name="my_server_m" 
 	auth="Container" 
 	type="javax.sql.DataSource"
 	maxActive= "64"
