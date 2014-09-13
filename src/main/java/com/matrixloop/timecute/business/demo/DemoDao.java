@@ -28,7 +28,7 @@ public enum DemoDao {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{
-			String sql = "SELECT * from "+dbNamePrefix+"."+tableName+" WHERE `id`=?;";
+			String sql = "SELECT * from `"+dbNamePrefix+"`.`"+tableName+"` WHERE `id`=?;";
 			ps=conn.prepareStatement(sql);
 			ps.setLong(1, id);
 			
