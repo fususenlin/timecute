@@ -34,21 +34,38 @@
 
 <!-- user -->
 <Resource 
-	name="mysql_store_m" 
+	name="my_server_s" 
 	auth="Container" 
 	type="javax.sql.DataSource"
 	maxActive= "64"
-	maxIdel="8" 
+	maxIdel="50" 
 	maxWait="3000" 
-	username="xxx"
-	password="xxxx" 
+	username="root"
+	password="root" 
 	removeAbandoned="true" 
 	autoReconnect="true"
 	driverClassName="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://host:3306/xxx_schema"
+	url="jdbc:mysql://localhost:3306/timecute"
 	validationQuery ="select 1"
 	testWhileIdle="true"
 	timeBetweenEvictionRunsMillis="300000">
 </Resource>
 
+<Resource 
+	name="my_server_s" 
+	auth="Container" 
+	type="javax.sql.DataSource"
+	maxActive= "64"
+	maxIdel="50" 
+	maxWait="3000" 
+	username="root"
+	password="root" 
+	removeAbandoned="true" 
+	autoReconnect="true"
+	driverClassName="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost:3306/timecute"
+	validationQuery ="select 1"
+	testWhileIdle="true"
+	timeBetweenEvictionRunsMillis="300000">
+</Resource>
 </Context>
