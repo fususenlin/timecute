@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="layout/login/login.css" type="text/css" media="screen">
+</head>
+
+<div ng-controller="LoginCtrl" class="login-bg login-pc" ng-show="$root.need_login == 'login'">
+
+    <div class="login-wrapper">
+        <a href="index.html">
+            <img src="" class="lazy_loading logo" data-ng-src="../asserts/img/logo-white.png">
+        </a>
+
+        <div class="box">
+            <div class="content-wrap">
+                <h6>登陆</h6>
+                <input class="form-control" type="text" placeholder="账号" ng-model="user.username">
+                <input class="form-control" type="password" placeholder="密码" ng-model="user.password">
+                <a ng-href="" class="forgot">忘记密码？</a>
+                <div class="remember">
+                    <input id="remember-me" type="checkbox">
+                    <label for="remember-me">记住我</label>
+                </div>
+                <button class="btn btn-success login" ng-click="login()">登录</button>
+            </div>
+        </div>
+
+        <div class="no-account">
+            <p>没有账户？</p>
+            <a ng-href="">注册</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,239 @@
+/* Custom navbar stuff */
+
+/* search input */
+
+.navbar {
+    border-left: 0;
+    border-right: 0;
+    border-top: 4px solid #44b549;
+    border-bottom: 1px solid #d9dadc;
+    min-height: 60px;
+    height: 60px;
+    background: #fff;
+}
+.navbar-brand img {
+    height: 21px;
+}
+.logo-title {
+    color: #333;
+    padding-left: 13px;
+    height: 13px;
+    font-size: 20px;
+    font-weight: 600;
+    border-left: 2px solid #d1d1d1;
+    margin-left: 10px;
+}
+.navbar-inverse {
+    position: fixed;
+    z-index: 1003;
+    left: 0;
+    width: 100%;
+    top: 0;
+}
+.navbar-brand {
+    height: 55px;
+}
+.navbar-inverse input.search {
+    height: 27px;
+    width: 220px;
+    padding: 3px 6px;
+    position: relative;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-right: 40px;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.navbar-inverse input.search:focus {
+    background-color: #fff;
+    border: 0;
+}
+.navbar-inverse .settings i {
+    color: #9ba3ad;
+    font-size: 21px;
+    cursor: pointer;
+}
+.navbar-inverse .settings i:hover {
+    color: #E0E0E0;
+}
+.navbar-inverse .notification-dropdown {
+    position: relative;
+}
+.navbar-inverse .notification-dropdown > a:hover,
+.navbar-inverse .notification-dropdown > a.active,
+.navbar-inverse .nav > li > a:hover {
+    background: #fff !important;
+    box-shadow: inset -1px -5px 0px -2px #44b549;
+}
+.navbar-inverse .notification-dropdown i {
+    font-size: 17px;
+    color: #9ba3ad;
+    cursor: pointer;
+}
+.navbar-inverse .notification-dropdown i:hover {
+    color: #E0E0E0;
+}
+.navbar-inverse .notification-dropdown .count {
+    position: absolute;
+    top: 6px;
+    left: 58%;
+    background: #35bac4;
+    padding: 0px 5px;
+    border-radius: 30px;
+    color: #fff;
+    line-height: 16px;
+    z-index: 9999;
+    text-align: center;
+    font-size: 11px;
+}
+.navbar-inverse .pop-dialog {
+    position: absolute;
+    right: 0px;
+    top: 65px;
+    display: none;
+    /* navbar popup dialog for notifications */
+    /* navbar popup dialog for messages */
+}
+.navbar-inverse .pop-dialog.is-visible {
+    display: block;
+    -webkit-animation: reveal .2s ease-out;
+    -moz-animation: reveal .2s ease-out;
+    animation: reveal .2s ease-out;
+}
+.navbar-inverse .pop-dialog .body {
+    box-shadow: 0px 1px 9px 1px #c2c2c2;
+}
+.navbar-inverse .pop-dialog .close-icon {
+    float: right;
+    text-decoration: none;
+    z-index: 9999;
+    position: relative;
+}
+.navbar-inverse .pop-dialog .footer {
+    border-top: 1px solid #e6e8e9;
+    background-color: #eff4f7;
+    margin: 15px 0px -10px 0px;
+    border-radius: 0px 0px 5px 5px;
+    padding: 12px 20px;
+    text-align: center;
+}
+.navbar-inverse .pop-dialog .footer a {
+    font-weight: 600;
+    color: #7d91a8;
+}
+.navbar-inverse .pop-dialog .notifications {
+    width: 330px;
+    margin: 10px -10px 0px -10px;
+}
+.navbar-inverse .pop-dialog .notifications h3 {
+    font-size: 13px;
+    color: #404951;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.navbar-inverse .pop-dialog .notifications .item {
+    display: block;
+    padding: 10px 0px 8px 20px;
+    border-top: 1px solid #e7e8ea;
+    color: #363636;
+    text-decoration: none;
+    padding-left: 50px;
+    position: relative;
+    transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+}
+.navbar-inverse .pop-dialog .notifications .item:hover {
+    background: #f0f6ff;
+}
+.navbar-inverse .pop-dialog .notifications .item > i {
+    color: #fc827b;
+    position: absolute;
+    left: 19px;
+    font-size: 18px;
+}
+.navbar-inverse .pop-dialog .notifications .item > i.icon-user {
+    left: 18px;
+}
+.navbar-inverse .pop-dialog .notifications .item .time {
+    float: right;
+    color: #82a3c1;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 11px;
+    min-width: 60px;
+    margin-right: 5px;
+}
+.navbar-inverse .pop-dialog .notifications .item .time i {
+    font-size: 13px;
+    color: #cfcfcf;
+    margin-right: 1px;
+}
+.navbar-inverse .pop-dialog .messages {
+    width: 325px;
+    margin: 10px -10px 0px -10px;
+}
+.navbar-inverse .pop-dialog .messages .item {
+    display: block;
+    padding: 10px 20px 15px 20px;
+    height: 80px;
+    border-bottom: 1px solid #e7e8ea;
+    color: #363636;
+    text-decoration: none;
+    position: relative;
+    transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+}
+.navbar-inverse .pop-dialog .messages .item.last {
+    border-bottom: 0px;
+}
+.navbar-inverse .pop-dialog .messages .item:hover {
+    background: #f0f6ff;
+}
+.navbar-inverse .pop-dialog .messages .item .display {
+    float: left;
+    border-radius: 50px;
+    margin-right: 15px;
+}
+.navbar-inverse .pop-dialog .messages .item .name {
+    font-size: 12px;
+    color: #404951;
+    font-weight: bold;
+}
+.navbar-inverse .pop-dialog .messages .item .msg {
+    font-size: 11px;
+    color: #636363;
+    line-height: 13px;
+    position: relative;
+    top: 2px;
+}
+.navbar-inverse .pop-dialog .messages .item .time {
+    position: absolute;
+    right: 0px;
+    bottom: 6px;
+    color: #82a3c1;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 11px;
+    min-width: 60px;
+    margin-right: 5px;
+}
+.navbar-inverse .pop-dialog .messages .item .time i {
+    font-size: 13px;
+    color: #cfcfcf;
+    margin-right: 1px;
+}
+.navbar-inverse .pop-dialog .messages .footer {
+    margin-top: 6px;
+}
+@media (max-width: 822px) {
+    .navbar-inverse input.search {
+        display: none;
+    }
+}

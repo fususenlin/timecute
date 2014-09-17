@@ -1,0 +1,54 @@
+.alertify-logs {
+    top: 10px!important;
+    left: 45%!important;
+}
+.alertify,
+.alertify-show,
+.alertify-logs {
+    -webkit-animation: fadeInDownBig 1s .2s ease both!important;
+    -moz-animation: fadeInDownBig 1s .2s ease both!important;
+}
+.alertify-log-hide {
+    -webkit-animation: fadeOutDown 1s .2s ease both!important;
+    -moz-animation: fadeOutDown 1s .2s ease both!important;
+}
+@-webkit-keyframes fadeInDownBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0)
+    }
+}
+@-moz-keyframes fadeInDownBig {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(-2000px)
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0)
+    }
+}
+@-webkit-keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px)
+    }
+}
+@-moz-keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        -moz-transform: translateY(0)
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: translateY(20px)
+    }
+}

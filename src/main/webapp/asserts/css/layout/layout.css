@@ -1,0 +1,253 @@
+body {
+    font-family: '微软雅黑', sans-serif;
+    position: relative;
+    margin: 0px;
+    font-size: 14px;
+    padding: 0px;
+    /*-webkit-font-smoothing: antialiased;*/
+}
+.main {
+    padding: 60px 10px 0 10px;
+}
+.container_box {
+    /*background-color: #fff;*/
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    line-height: inherit;
+    color: #29323d;
+    word-break: break-all;
+}
+body.menu {
+    overflow-x: hidden;
+}
+body.menu .content {
+    margin-left: 165px;
+    position: fixed;
+    width: 850px;
+}
+body.menu #sidebar-nav {
+    position: absolute;
+    left: 0;
+    /*height: 100%;*/
+    border-right: 0px;
+    box-shadow: none;
+}
+input.search {
+    background: url("img/lens.png")
+    /*tpa=http://detail.herokuapp.com/img/lens.png*/
+    #fcfcfc no-repeat 95%;
+    box-shadow: none;
+    height: 25px;
+    width: 220px;
+    font-size: 13px;
+    padding: 2px 6px;
+    border: 1px solid #d0dde9;
+    margin: 0;
+    border-radius: 2px;
+    top: 14px;
+}
+.header {
+    margin-bottom: 60px;
+}
+.header h1,
+.header h2,
+.header h3,
+.header h4,
+.header h5 {
+    float: left;
+    margin-top: 5px;
+}
+#pad-wrapper {
+    padding: 0px 0px;
+    margin-top: 55px;
+}
+#pad-wrapper h4 {
+    color: #696d73;
+    font-style: italic;
+}
+.content {
+    min-height: 720px;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: margin-left .3s ease;
+    -moz-transition: margin-left .3s ease;
+    -o-transition: margin-left .3s ease;
+    -ms-transition: margin-left .3s ease;
+    transition: margin-left .3s ease;
+    /* starts skins changer */
+    /* end skin changer*/
+}
+.content.wide-content {
+    margin-left: 0;
+    border-radius: 0;
+}
+.content .skins-nav {
+    opacity: 1;
+    -webkit-transition: right .3s;
+    -moz-transition: right .3s;
+    -ms-transition: right .3s;
+    -o-transition: right .3s;
+    transition: right .3s;
+    position: fixed;
+    right: -88px;
+    top: 135px;
+    font-size: 13px;
+    z-index: 9999;
+}
+.content .skins-nav:hover {
+    right: 0;
+}
+.content .skins-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 10px;
+    height: 37px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+    margin-bottom: 3px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+.content .skins-nav a.first_nav {
+    background: rgba(95, 175, 228, 0.8);
+}
+.content .skins-nav a.first_nav:hover {
+    background: #5fafe4;
+}
+.content .skins-nav a.second_nav {
+    background: rgba(36, 43, 77, 0.8);
+}
+.content .skins-nav a.second_nav:hover {
+    background: #242b4d;
+}
+.content .skins-nav a .icon {
+    float: left;
+    width: 9px;
+    height: 10px;
+    background: url("img/skin-nav-bullets.png")
+    /*tpa=http://detail.herokuapp.com/img/skin-nav-bullets.png*/
+    0 0 no-repeat;
+    margin: 15px 15px 0 5px;
+}
+.content .skins-nav a.selected .icon {
+    background-position: 0 -9px;
+}
+.content .skins-nav a .text {
+    padding-right: 12px;
+    white-space: nowrap;
+    display: block;
+    width: 115px;
+    position: relative;
+    top: 9px;
+    -webkit-transition: width .2s;
+    -moz-transition: width .2s;
+    -ms-transition: width .2s;
+    -o-transition: width .2s;
+    transition: width .2s;
+}
+/* responsive */
+
+@media (max-width: 767px) {
+    #main-stats .stat {
+        width: 50%;
+        float: left;
+    }
+}
+/*
+* loading bar
+**/
+
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1)
+    }
+}
+@-moz-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -moz-transform: scale(0)
+    }
+    40% {
+        -moz-transform: scale(1)
+    }
+}
+@-ms-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -ms-transform: scale(0)
+    }
+    40% {
+        -ms-transform: scale(1)
+    }
+}
+@-o-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -o-transform: scale(0)
+    }
+    40% {
+        -o-transform: scale(1)
+    }
+}
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0)
+    }
+    40% {
+        transform: scale(1)
+    }
+}
+.loading-indicator {
+    margin: 10px auto;
+    width: 70px;
+    text-align: center;
+    z-index: 9999
+}
+.loading-indicator .loader-dot {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #a6a6a6;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    -moz-animation: bouncedelay 1.4s infinite ease-in-out;
+    -ms-animation: bouncedelay 1.4s infinite ease-in-out;
+    -o-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+.loading-indicator .loader-dot:nth-child(1) {
+    -webkit-animation-delay: -0.32s;
+    -moz-animation-delay: -0.32s;
+    -ms-animation-delay: -0.32s;
+    -o-animation-delay: -0.32s;
+    animation-delay: -0.32s
+}
+.loading-indicator .loader-dot:nth-child(2) {
+    -webkit-animation-delay: -0.16s;
+    -moz-animation-delay: -0.16s;
+    -ms-animation-delay: -0.16s;
+    -o-animation-delay: -0.16s;
+    animation-delay: -0.16s
+}
+.panel-default > .panel-heading {
+    background-color: #FFFFFF;
+}
