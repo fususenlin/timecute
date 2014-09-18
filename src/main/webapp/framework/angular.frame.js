@@ -108,7 +108,11 @@ $route = function (module_name, base) {
 
                     }
                 }
-                route.require = route.require || [];
+                if (typeof (route.require) == "function") {
+                    route.require = route.require();
+                } else {
+                    route.require = route.require || [];
+                }
                 route.loader = [];
                 if (route.js) {
                     route.loader.push(route.js);

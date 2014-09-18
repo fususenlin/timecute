@@ -1,5 +1,11 @@
 var FirstCtrl = function ($rootScope, $scope, $modal, $http, $location) {
 
+    $scope.mode = "register";
+
+    $scope.to_editor = function () {
+        $location.path("/editor")
+    };
+
     $scope.$$postDigest(function () {
         $('.banner').unslider({
             speed: 500, //  The speed to animate each slide (in milliseconds)

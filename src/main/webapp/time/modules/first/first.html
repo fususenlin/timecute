@@ -27,7 +27,7 @@
                             <div class="inner">
                                 <h1>时光留书</h1>
                                 <p>写给未来的信</p>
-                                <a class="btn">去写一封</a>
+                                <a class="btn" ng-click="to_editor()">去写一封</a>
                             </div>
                         </li>
                         <li style="width: 33.33%; background-image: url(http://www.bootcss.com/p/unslider/img/wood.jpg); background-size: 100% 100%;">
@@ -35,7 +35,7 @@
                                 <h1>一封书信，一份问候</h1>
                                 <p>放慢社交速度，回归社交本质</p>
 
-                                <a class="btn" href="#download">去写一封</a>
+                                <a class="btn" ng-click="to_editor()">去写一封</a>
                             </div>
                         </li>
 
@@ -44,7 +44,7 @@
                                 <h1>时光胶囊</h1>
                                 <p>给未来的自己一个期许，一份回忆</p>
 
-                                <a class="btn" href="//github.com/idiot/unslider">去写一封</a>
+                                <a class="btn" ng-click="to_editor()">去写一封</a>
                             </div>
                         </li>
                     </ul>
@@ -104,7 +104,7 @@
         </div>
     </div>
 </div>
-<div class="col-md-3  clear-padding">
+<div class="col-md-3  clear-padding" ng-show="mode=='register'">
     <div class="panel panel-default panel-black">
         <div class="panel-body">
             <form class="form-horizontal" role="form">
@@ -120,21 +120,21 @@
                 </div>
                 <div class="form-group form-group-lg">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary btn-block btn-lg">免费注册</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">快速注册</button>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-12">
+                    <div class="col-sm-4">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" checked>接受用户服务协议
+                                <input type="checkbox" checked>协议
                             </label>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-8">
                         <div class="checkbox">
                             <label>
-                                已有账号？<a class="text-primary">马上登陆</a>
+                                已有账号？<a class="text-primary" ng-click="mode='login'">马上登陆</a>
                             </label>
                         </div>
                     </div>
@@ -145,5 +145,46 @@
     </div>
 </div>
 
+<div class="col-md-3  clear-padding" ng-show="mode=='login'">
+    <div class="panel panel-default panel-black">
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group form-group-lg">
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control input-lg" id="inputEmail3" placeholder="邮箱">
+                    </div>
+                </div>
+                <div class="form-group form-group-lg">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control input-lg" id="inputPassword3" placeholder="密码（6到16位字母、数字、无空格）">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked>下次自动登陆
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="checkbox">
+                            <label>
+                                <a class="text-primary">忘记密码?</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-success btn-block btn-lg">登陆</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
 
 </html>
