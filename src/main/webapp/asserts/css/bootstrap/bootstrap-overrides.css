@@ -3,9 +3,6 @@
 body {
     background: #e7e8eb;
 }
-.container {
-    padding: 36px 0 88px;
-}
 body,
 input,
 textarea {
@@ -351,9 +348,6 @@ table th span.line {
     #pad-wrapper {
         padding: 0 0!important;
         margin-top: 0!important;
-    }
-    .container {
-        padding: 10px 0 88px;
     }
     .fix-height {
         min-height: 200px!important;

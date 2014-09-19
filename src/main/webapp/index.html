@@ -70,7 +70,6 @@
     <script type="text/javascript" src="../resource/components/marked/marked.js"></script>
     <script type="text/javascript" src="../resource/components/marked/lib.js"></script>
 
-    <script type="text/javascript" src="../resource/components/wysiwyg/wysiwyg.js"></script>
     <script type="text/javascript" src="../resource/components/unslider/unslider.js"></script>
     <!-- slider -->
     <script type="text/javascript" src="../resource/jquery/jquery-ui/ui/jquery-ui.custom.js"></script>
@@ -80,7 +79,6 @@
     <script type="text/javascript" src="../resource/jquery/jquery-flot/jquery.flot.stack.js"></script>
     <script type="text/javascript" src="../resource/jquery/jquery-flot/jquery.flot.resize.js"></script>
     <script type="text/javascript" src="../resource/jquery/jquery-validate/jquery.validate.js"></script>
-
     <!-- 引用包：bootstrap -->
     <script type="text/javascript" src="../resource/bootstrap/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="../resource/bootstrap/bootstrap-treeview/public/js/bootstrap-treeview.js"></script>
@@ -94,14 +92,11 @@
 
 <body>
     <div class="main">
-        <header class="navbar navbar-inverse" role="banner" ng-include="'layout/header/header.html'"></header>
-        <div class="container">
-            <div class="container_box" ng-view>
-
-            </div>
+        <header ng-include="'layout/header/header.html'"></header>
+        <div ng-view>
 
         </div>
-
+        <div ng-include="'layout/footer/footer.html'"></div>
     </div>
     <!-- 引用包：有压缩包 -->
     <script src="../resource/angular/angular/angular.js"></script>

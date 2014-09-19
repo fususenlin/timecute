@@ -7,6 +7,7 @@ var FirstCtrl = function ($rootScope, $scope, $modal, $http, $location) {
     };
 
     $scope.$$postDigest(function () {
+
         $('.banner').unslider({
             speed: 500, //  The speed to animate each slide (in milliseconds)
             delay: 3000, //  The delay between slide animations (in milliseconds)

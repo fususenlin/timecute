@@ -43,7 +43,7 @@ var HeaderCtrl = function ($scope, $routeParams, $rootScope, $location, $http) {
 
     $scope.logout = function () {
         $http.post("/auth/logout/", $scope.user)
-            .success(function(data) {
+            .success(function (data) {
                 console.log(data);
                 $location.path("/login");
             });

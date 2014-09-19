@@ -6,37 +6,46 @@
     <link rel="stylesheet" type="text/css" href="../asserts/css/layout/header.css">
 </head>
 <div ng-controller="HeaderCtrl">
-    <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" id="menu-toggler">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand">
-            <img class="logo01" src="../asserts/img/logo-time.png?v21" alt="logo">
-        </a>
-    </div>
-    <div class="navbar-collapse collapse  pull-right" role="navigation">
-        <ul class="nav navbar-nav">
-            <li>
-                <a>首页</a>
-            </li>
-            <li>
-                <a>功能介绍</a>
-            </li>
-            <li>
-                <a>版本历史</a>
-            </li>
-            <li>
-                <a>关于我们</a>
-            </li>
-            <!--<li class="settings hidden-xs hidden-sm pointer" ng-click="logout()">
+
+    <div class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" id="menu-toggler">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">
+                    <img class="logo01" src="../asserts/img/logo-time.png?v21" alt="logo">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse  pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a>首页</a>
+                    </li>
+                    <li>
+                        <a>功能介绍</a>
+                    </li>
+                    <li>
+                        <a>版本历史</a>
+                    </li>
+                    <li>
+                        <a>关于我们</a>
+                    </li>
+                    <li class="settings hidden-xs hidden-sm pointer" ng-click="login()">
+                        <a role="button">
+                            <i class="fa fa-sign-in"></i>
+                        </a>
+                    </li>
+                    <!--<li class="settings hidden-xs hidden-sm pointer" ng-click="logout()">
     <a role="button">
         <i class="fa fa-sign-out"></i>
     </a>
 </li>-->
-        </ul>
+                </ul>
+            </div>
+        </div>
     </div>
-
 </div>

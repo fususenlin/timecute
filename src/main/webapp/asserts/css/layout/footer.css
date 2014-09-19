@@ -1,0 +1,136 @@
+#ft {
+    padding: 10px 0 50px;
+    border-top: 1px solid #CDCDCD;
+    line-height: 1.8;
+    color: #666;
+}
+#ft #footer {
+    overflow: hidden;
+    position: relative;
+}
+.wp {
+    margin: 0 auto;
+    width: 1220px;
+}
+.cl {
+    zoom: 1;
+}
+#ft {
+    margin-top: 0px;
+    padding: 40px 0;
+    border: 0 none;
+    background: #333;
+    overflow: hidden;
+    font-size: 12px;
+}
+#ft #footer {
+    overflow: hidden;
+    position: relative;
+}
+#ft #footer a:hover {
+    color: #fff;
+}
+#ft #footer dl.ft_list,
+#ft #footer #ft_copyright {
+    display: block;
+    float: left;
+}
+#ft #footer dl.ft_list {
+    margin-right: 30px;
+    width: 160px;
+}
+#ft #footer dl.ft_list dt {
+    margin-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #dfdfdf;
+}
+#ft #footer dl.ft_list dd,
+#ft #footer dl.ft_list dd a {
+    height: 24px;
+    line-height: 24px;
+    color: #999;
+}
+#ft #footer dl.ft_list dd a {
+    font-size: 14px;
+}
+#ft #footer dl.ft_list dd a:hover {
+    color: #fff;
+}
+#ft #footer dl.ft_list.ft_pic dd {
+    margin-bottom: 15px;
+    height: 30px;
+}
+#ft #footer dl.ft_list.ft_pic dd img {
+    width: 80px;
+    height: 30px;
+}
+#ft #footer #ft_copyright {
+    width: 340px;
+}
+#ft #footer #ft_copyright {
+    font-family: Tahoma, sans-serif;
+    float: right;
+}
+#ft #footer #ft_copyright p,
+#ft #footer #ft_copyright p a {
+    color: #999;
+    overflow: hidden;
+}
+#ft #footer #ft_copyright p.indent {
+    text-indent: 2em;
+}
+#ft #footer #ft_copyright p.mb10 {
+    margin-bottom: 10px;
+}
+#ft #footer #ft_copyright p.align_r {
+    text-align: right;
+}
+#ft #footer #ft_copyright p a {
+    height: 18px;
+    line-height: 19px;
+    line-height: 21px\9;
+    *line-height: 20px;
+    font-size: 12px;
+}
+#ft #footer #ft_copyright p span {
+    color: #666;
+}
+#scrolltop {
+    z-index: 9999999999;
+}
+#scrolltop {
+    border-radius: 0;
+    width: 40px;
+    border: 0 none;
+    background: transparent;
+}
+#scrolltop a {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-top: 1px;
+    border-top: none;
+    background: #f5f5f5 url(http://cdn.w3cfuns.com/resource/images/scrolltop.png) no-repeat 0 3px;
+}
+#scrolltop a:hover {
+    background: #759fd9 url(http://cdn.w3cfuns.com/resource/images/scrolltop.png) no-repeat 0 3px;
+}
+a.scrolltopa:hover {
+    background-position: -40px 3px!important;
+}
+a.replyfast {
+    background-position: 0 -37px!important;
+}
+a.replyfast:hover {
+    background-position: -40px -37px!important;
+}
+a.returnlist,
+a.returnboard {
+    background-position: 0 -72px!important;
+}
+a.returnlist:hover,
+a.returnboard:hover {
+    background-position: -40px -72px!important;
+}
