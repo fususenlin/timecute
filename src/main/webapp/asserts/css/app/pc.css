@@ -282,3 +282,6 @@ body {
     min-width: 100px;
     text-align: center;
 }
+.navbar-nav > li:hover {
+    font-weight: bolder;
+}

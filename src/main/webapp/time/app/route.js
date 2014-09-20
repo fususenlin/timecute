@@ -5,20 +5,12 @@ $routeProvider.when("/login", {
 
 $routeProvider.when("/", {
     resource: 'first/first',
-    controller: 'FirstCtrl'
+    controller: 'FirstCtrl',
+    require: ["../resource/components/unslider/unslider.js"]
 });
 $routeProvider.when("/editor", {
     resource: 'editor/editor',
     controller: 'EditorCtrl',
-    require: function () {
-        var requires = [];
-        var base = "../resource/components/wysihtml5/";
-        requires.push(base + "lib/css/bootstrap3-wysiwyg5.css");
-        requires.push(base + "lib/css/bootstrap3-wysiwyg5-color.css");
-        requires.push(base + "lib/js/wysihtml5-0.3.0.js");
-        requires.push(base + "src/bootstrap3-wysihtml5.js");
-        requires.push(base + "src/locales/bootstrap-wysihtml5.zh-CN.js");
-        return requires;
-    }
+    require: ["../resource/components/marked/marked.js", "../resource/components/marked/lib.js"]
 });
 $route("time.routes", "modules/");
