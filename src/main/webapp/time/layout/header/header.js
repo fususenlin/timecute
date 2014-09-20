@@ -47,7 +47,9 @@ var HeaderCtrl = function ($scope, $routeParams, $rootScope, $location, $http) {
                 console.log(data);
                 $location.path("/login");
             });
-
+    };
+    $scope.login = function () {
+        $rootScope.need_login = true;
     };
 };
 

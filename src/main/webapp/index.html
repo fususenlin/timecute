@@ -92,6 +92,7 @@
 
 <body>
     <div class="main">
+        <div ng-include="'layout/login/login.html'"></div>
         <header ng-include="'layout/header/header.html'"></header>
         <div ng-view>
 
@@ -128,6 +129,7 @@
     <script src="app/run.js"></script>
 
     <script src="layout/header/header.js"></script>
+    <script src="layout/login/login.js"></script>
     <!--- 项目包：主入口 -->
     <script src="app.js"></script>
 

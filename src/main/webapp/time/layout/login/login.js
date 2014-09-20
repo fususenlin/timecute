@@ -1,19 +1,17 @@
-var LoginCtrl = function ($scope, $http, $routeParams, $rootScope,$location) {
-    $scope.user = {
-        username: "root",
-        password: "lms"
+var LoginCtrl = function ($scope, $http, $routeParams, $rootScope, $location) {
+
+    $scope.mode = "register";
+
+    $scope.goto_login = function () {
+        $scope.mode = "login";
     };
-    $rootScope.title = "登录";
 
     $scope.login = function () {
-        $http.post("/auth/login/", $scope.user)
-            .success(function(data) {
-                console.log(data);
-                $rootScope.need_login = "admin";
-                localStorage.setItem("need_login","admin");
-                refreshCookie();
-                $location.path("/articles");
-            });
+        $rootScope.need_login = false;
+    };
+
+    $scope.register = function () {
+        $rootScope.need_login = false;
     };
 };
-LoginCtrl.$inject = ['$scope', '$http', '$routeParams', '$rootScope','$location'];
+LoginCtrl.$inject = ['$scope', '$http', '$routeParams', '$rootScope', '$location'];

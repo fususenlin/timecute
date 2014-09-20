@@ -1,7 +1,5 @@
 var FirstCtrl = function ($rootScope, $scope, $modal, $http, $location) {
 
-    $scope.mode = "register";
-
     $scope.to_editor = function () {
         $location.path("/editor")
     };

@@ -174,22 +174,11 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.panel-black .panel-body {
-    background-color: rgba(58, 58, 58, 0.74);
-    border-radius: 4px;
-}
 .panel-black label {
     color: #a0a0a0
 }
 .text-lg {
     font-size: 16px;
-}
-.login-pc {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
 }
 .content-title {
     margin-left: -1em;
@@ -289,8 +278,7 @@ body {
 .clear-padding {
     padding: 0 0px;
 }
-.login {
-    position: absolute;
-    right: 60px;
-    top: 60px;
+.navbar-nav > li {
+    min-width: 100px;
+    text-align: center;
 }
