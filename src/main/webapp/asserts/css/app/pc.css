@@ -285,3 +285,15 @@ body {
 .navbar-nav > li:hover {
     font-weight: bolder;
 }
+.panel-heading label {
+    margin-bottom: 0;
+}
+.editor-person {
+    margin-bottom: 10px;
+}
+.editor-person:last-child {
+    margin-bottom: 0;
+}
+.page_back {
+    font-size: 1.4em;
+}

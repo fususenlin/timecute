@@ -4,6 +4,9 @@ var FirstCtrl = function ($rootScope, $scope, $modal, $http, $location) {
         $location.path("/editor")
     };
 
+    $scope.to_view = function () {
+        $location.path("/view");
+    };
     $scope.$$postDigest(function () {
 
         $('.banner').unslider({

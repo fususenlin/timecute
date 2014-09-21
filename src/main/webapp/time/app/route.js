@@ -11,6 +11,21 @@ $routeProvider.when("/", {
 $routeProvider.when("/editor", {
     resource: 'editor/editor',
     controller: 'EditorCtrl',
-    require: ["../resource/components/marked/marked.js", "../resource/components/marked/lib.js"]
+    require: function () {
+        var requires = [];
+        requires.push("../resource/components/marked/marked.js");
+        requires.push("../resource/components/marked/lib.js");
+        return requires;
+    }
+});
+$routeProvider.when("/view", {
+    resource: 'view/view',
+    controller: 'ViewCtrl',
+    require: function () {
+        var requires = [];
+        requires.push("../resource/components/marked/marked.js");
+        requires.push("../resource/components/marked/lib.js");
+        return requires;
+    }
 });
 $route("time.routes", "modules/");
