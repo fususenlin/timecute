@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <script src="../resource/bootstrap/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
 </head>
 <br/>
 <br>
@@ -66,6 +68,32 @@
                                     <button class="btn btn-default btn-danger fa fa-minus" type="button" ng-click="minus()" ng-show="$index!=users.length-1"></button>
                                 </span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5" ng-show="mode=='send' && !username">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h4 class="col-md-6">
+                            <span class="text-right">选个发送时间</span>
+                        </h4>
+                        <h4 class="col-md-6 text-right">
+                            <span class="text-info">{{letter.sendTime}}</span>
+                            <i class="fa fa-clock-o"></i>
+                        </h4>
+
+                    </div>
+                </div>
+                <div class="panel-body" style="min-height: 278px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" id="send_time"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group" id="send_time"></div>
                         </div>
                     </div>
                 </div>

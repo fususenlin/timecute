@@ -40,8 +40,17 @@ var EditorCtrl = function ($rootScope, $scope, $modal, $http, $location) {
         bootbox.message("发送成功");
     };
 
+    $scope.letter.sendTime = "";
     $scope.$$postDigest(function () {
-
+        $('#send_time').datepicker({
+            format: 'yyyy-mm-dd',
+            language: "zh-CN",
+            startDate: '+2d',
+            orientation: "top left"
+        }).on("changeDate", function (e) {
+            $scope.letter.sendTime = e.format("yyyy-mm-dd");
+            apply($scope);
+        });
     });
 };
 EditorCtrl.$inject = ['$rootScope', '$scope', '$modal', '$http', '$location'];
