@@ -10,114 +10,98 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-12" ng-class="{'col-md-7':mode=='send','col-md-12':mode=='edit'}">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <label>
                         <h4 ng-show="mode=='edit'">说点什么</h4>
                         <h4 ng-show="mode=='send'">
-                            <span>
-                                预览
-                            </span>
+                            预览
                         </h4>
                     </label>
-                    <span class="pull-right" ng-show="mode=='send'"> 
-                         <button class="btn btn-default btn-sm fa fa-pencil" type="button" title="再写一点儿" ng-click="to_edit()"></button>
+                    <span class="pull-right" ng-show="mode=='send'">
+                        <button class="btn btn-default btn-sm fa fa-pencil" type="button" title="再写一点儿" ng-click="to_edit()"></button>
                     </span>
                 </div>
                 <div class="panel-body">
-                    <div class="row" ng-show="mode=='edit'">
-                        <div class="col-md-6">
-                            <textarea class="form-control wmd-panel" style="width: 100%; height: 620px;resize: none; " ng-model="edit_content" placeholder="说几句吧"></textarea>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="preview" style="width: 100%; height: 620px;overflow-y: auto;" ng-bind-html="letter.words"></div>
-                        </div>
-                    </div>
-                    <div class="row" ng-show="mode=='send'">
-                        <div class="col-md-12">
-                            <div style="width: 100%; height: 654px;overflow-y: auto;" ng-bind-html="letter.words"></div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row" ng-show="mode=='edit'">
-                        <div class="col-md-12 text-center">
-                            <button class="btn btn-success" ng-click="mode_to()">写好了</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5" ng-show="mode=='send'">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <label>
-                        <h4>打算发给谁？</h4>
-                    </label>
-                </div>
-                <div class="panel-body">
-                    <div class="row editor-person" ng-repeat="user in users">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="昵称" ng-model="user.name">
-                        </div>
-                        <div class="col-md-8" style="padding-left:0">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="邮箱" ng-model="user.email">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default fa fa-plus" type="button" ng-click="add()" ng-show="$index==users.length-1"></button>
-                                    <button class="btn btn-default btn-danger fa fa-minus" type="button" ng-click="minus()" ng-show="$index!=users.length-1"></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5" ng-show="mode=='send' && !username">
-            <div class="panel panel-default">
-                <div class="panel-heading">
                     <div class="row">
-                        <h4 class="col-md-6">
-                            <span class="text-right">选个发送时间</span>
-                        </h4>
-                        <h4 class="col-md-6 text-right">
-                            <span class="text-info">{{letter.sendTime}}</span>
-                            <i class="fa fa-clock-o"></i>
-                        </h4>
+                        <div class="col-md-6">
+                            <div style="width: 100%; height: 660px;overflow-y: auto;" ng-bind-html="letter.words"></div>
+                        </div>
+                        <div class="col-md-6" ng-show="mode=='edit'">
+                            <textarea class="form-control wmd-panel" style="width: 100%; height: 600px;margin-bottom:10px;resize: none; " ng-model="edit_content" placeholder="说几句吧"></textarea>
+                            <button class="btn btn-primary btn-block" ng-click="mode_to()">
+                                写好了
+                            </button>
+                        </div>
+                        <div class="col-md-6" ng-show="mode=='send'" style="height: 660px;overflow-y: auto;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <label>
+                                        <h4>署上大名</h4>
+                                    </label>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="昵称" ng-model="letter.name">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="email" class="form-control form-control-block" placeholder="邮箱" ng-model="letter.email">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <label>
+                                        <h4>打算发给谁？</h4>
+                                    </label>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row editor-person" ng-repeat="user in users">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="昵称" ng-model="user.name">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" placeholder="邮箱" ng-model="user.email">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default fa fa-plus" type="button" ng-click="add()" ng-show="$index==users.length-1"></button>
+                                                    <button class="btn btn-default btn-danger fa fa-minus" type="button" ng-click="minus()" ng-show="$index!=users.length-1"></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <h4 class="col-md-6">
+                                            <span class="text-right">选个发送时间就能发送啦</span>
+                                        </h4>
+                                        <h4 class="col-md-6 text-right">
+                                            <span class="text-info">{{letter.sendTime}}</span>
+                                            <i class="fa fa-clock-o"></i>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body" style="min-height: 278px;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group" id="send_time"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-success btn-block btn-send" ng-click="send()">
+                                                立即发送&nbsp; <i class="fa fa-send fa-fw"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    </div>
-                </div>
-                <div class="panel-body" style="min-height: 278px;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group" id="send_time"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-group" id="send_time"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5" ng-show="mode=='send' && !username">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <label>
-                        <h4>署上大名，就可以发送啦</h4>
-                    </label>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="昵称" ng-model="letter.name">
-                        </div>
-                        <div class="col-md-8" style="padding-left:0">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="邮箱" ng-model="letter.email">
-                                <span class="input-group-btn">
-                                      <button class="btn btn-success fa fa-send" type="button" title="发送" ng-click="send()"></button>
-                                </span>
-                            </div>
+
                         </div>
                     </div>
                 </div>

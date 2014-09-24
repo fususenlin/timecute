@@ -297,3 +297,8 @@ body {
 .page_back {
     font-size: 1.4em;
 }
+.btn-send {
+    position: absolute;
+    right: 10px;
+    bottom: -244px;
+}

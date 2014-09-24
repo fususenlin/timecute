@@ -1,6 +1,6 @@
 var EditorCtrl = function ($rootScope, $scope, $modal, $http, $location) {
 
-    $scope.mode = "send";
+    $scope.mode = "edit";
 
     $scope.edit_content = "#使用markdown语法";
 

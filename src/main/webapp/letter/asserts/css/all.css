@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #dedede;
+    border-left: 0;
+}
+::-webkit-scrollbar-track {
+    border-left: 0;
+    background-image: url(../../../asserts/img/time/paper/bg_mini.png);
+}
+html,
+body,
+.fix-full {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.fix-full .panel-body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #333;
+    text-shadow: 1px 1px 0 #FFF;
+}
+.panel-footer {
+    border-top: 0!important;
+}
+.fix-panel {
+    padding-bottom: 94px;
+    margin-bottom: 0px!important;
+}
+body {
+    background-image: url(../../../asserts/img/time/paper/bg.png);
+}
+.letter-panel-heading {
+    line-height: 30px;
+    border-bottom: #dedede solid 1px!important;
+    background-image: url(../../../asserts/img/time/paper/bg_mini.png)
+}
+.letter-panel-heading label {
+    margin-bottom: 0;
+    color: #333;
+    text-shadow: 1px 1px 0 #FFF;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.letter-panel-footer {
+    line-height: 30px;
+    border-bottom: #dedede solid 1px;
+    border-top: 0!important;
+    background-image: url(../../../asserts/img/time/paper/bg_mini.png)
+}

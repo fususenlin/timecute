@@ -20,14 +20,4 @@ $routeProvider.when("/editor", {
         return requires;
     }
 });
-$routeProvider.when("/view", {
-    resource: 'view/view',
-    controller: 'ViewCtrl',
-    require: function () {
-        var requires = [];
-        requires.push("../resource/components/marked/marked.js");
-        requires.push("../resource/components/marked/lib.js");
-        return requires;
-    }
-});
 $route("time.routes", "modules/");
