@@ -32,5 +32,7 @@ public interface X {
 		String HD_Referer = "Referer";
 		String CONTENT_ENCODING = "Content-Encoding";
 		String USER_AGENT = "user-agent";
+		
+		int cookieExpireTime = 7 * 24 * 60 * 60;
 	}
 }

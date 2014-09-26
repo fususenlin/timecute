@@ -11,4 +11,10 @@ public interface Param {
 	interface Demo{
 		String ID = "id";
 	}
+	
+	interface User{
+		String UID = "uid";
+		String USERNAME = "username";
+		String PASSWORD = "password";
+	}
 }
