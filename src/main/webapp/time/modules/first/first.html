@@ -57,51 +57,19 @@
                 <br/>
                 <div class="container">
                     <div class="row ">
-                        <div class="col-sm-6 col-md-4 col-lg-4 ">
-                            <div class="thumbnail" ng-click="to_view()">
-                                <a href="../letter.html?id=123">
-                                    <img class="lazy" src="../asserts/img/time/2.jpg" width="300" height="150">
+                        <div class="col-sm-6 col-md-4 col-lg-4 cursor" ng-repeat="letter in letters">
+                            <div class="thumbnail" ng-click="to_view(letter.id)">
+                                <a>
+                                    <img class="lazy " ng-src="{{letter.img}}" width="300" height="150">
                                 </a>
                                 <div class="caption">
                                     <h3> 
-                                        <a>最美情书<br><small>史上最美的情书</small></a>
+                                        <a>{{letter.title}}<br><small>{{letter.small}}</small></a>
                                     </h3>
                                     <p>
-                                        一封来自天堂的情书，写给那些年最爱的女孩，揭秘那些年最想说的话
+                                        {{letter.preview}}
                                     </p>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 ">
-                            <div class="thumbnail" ng-click="to_view()">
-                                <a href="../letter.html?id=2">
-                                    <img class="lazy" src="../asserts/img/time/1.jpg" width="300" height="150">
-                                </a>
-                                <div class="caption">
-                                    <h3> 
-                                <a>未来的你<br><small>预言成真，不服来辩</small></a>
-                            </h3>
-                                    <p>
-                                        预言十年后，我会成为你
-                                        <br>嚣张，可爱，有点二
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 ">
-                            <div class="thumbnail" ng-click="to_view()">
-                                <a href="../letter.html?id=3">
-                                    <img class="lazy" src="../asserts/img/time/3.jpg" width="300" height="150">
-                                </a>
-                                <div class="caption">
-                                    <h3> 
-                                <a>最好的回忆<br><small>过往的今天</small></a>
-                            </h3>
-                                    <p>
-                                        理想不死，奋斗不止
-                                        <br>去实践
-                                    </p>
                                 </div>
                             </div>
                         </div>

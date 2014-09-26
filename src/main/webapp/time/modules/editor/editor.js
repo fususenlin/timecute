@@ -1,29 +1,42 @@
 var EditorCtrl = function ($rootScope, $scope, $modal, $http, $location) {
 
-    $scope.mode = "edit";
-
-    $scope.edit_content = "#使用markdown语法";
+    $scope.mode = "send";
 
     $scope.letter = {};
 
-    $scope.users = [];
-    $scope.users.push({
+    $scope.edit_content = "###随便写点";
+
+    $scope.letter.users = [];
+    $scope.letter.users.push({
         name: "李茂盛",
         email: "limaoshengcpp@163.com"
     });
+
+    $scope.letter.from = {
+        name: "苏轼",
+        email: "sushi@tang.com"
+    };
     $scope.add = function () {
-        $scope.users.push({
-            name: "",
-            email: ""
+        $scope.letter.users.push({
+            name: Random.name(),
+            email: Random.email()
         });
     };
     $scope.minus = function (index) {
-        $scope.users.splice(index, 1);
+        bootbox.confirm("确定要删除吗?", function (ret) {
+            if (ret) {
+                $scope.letter.users.splice(index, 1);
+                apply($scope);
+            }
+        });
+
     };
     $scope.$watch('edit_content', function (data) {
         $scope.letter.words = window.marked($scope.edit_content);
         var div = document.getElementById('preview');
-        div.scrollTop = div.scrollHeight;
+        if (div) {
+            div.scrollTop = div.scrollHeight;
+        }
     });
     $scope.to_editor = function () {
         $location.path("/editor");

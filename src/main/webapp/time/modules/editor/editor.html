@@ -7,7 +7,6 @@
     <script src="../resource/bootstrap/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
 </head>
 <br/>
-<br>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -19,39 +18,27 @@
                             预览
                         </h4>
                     </label>
-                    <span class="pull-right" ng-show="mode=='send'">
-                        <button class="btn btn-default btn-sm fa fa-pencil" type="button" title="再写一点儿" ng-click="to_edit()"></button>
+                    <span class="pull-right">
+                        <button class="btn btn-primary btn-sm" ng-show="mode=='edit'" ng-disabled="!letter.words" ng-click="mode_to()">
+                            已经写好&nbsp; <i class="fa fa-chevron-right fa-fw"></i>
+                        </button>
+                        <button class="btn btn-success btn-sm" ng-show="mode=='send'" 
+                                ng-disabled="!letter.from.name || !letter.from.email || !letter.sendTime"  ng-click="send()">
+                            立即发送
+                            &nbsp; <i class="fa fa-send fa-fw"></i>
+                        </button>
                     </span>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div style="width: 100%; height: 660px;overflow-y: auto;" ng-bind-html="letter.words"></div>
+                            <div ng-if="mode=='edit'" id="preview" class="preview" ng-bind-html="letter.words"></div>
+                            <div ng-if="mode=='send'" id="preview" class="preview preview_send" ng-bind-html="letter.words" title="返回修改" ng-click="to_edit()"></div>
                         </div>
                         <div class="col-md-6" ng-show="mode=='edit'">
-                            <textarea class="form-control wmd-panel" style="width: 100%; height: 600px;margin-bottom:10px;resize: none; " ng-model="edit_content" placeholder="说几句吧"></textarea>
-                            <button class="btn btn-primary btn-block" ng-click="mode_to()">
-                                写好了
-                            </button>
+                            <textarea class="form-control wmd-panel" style="width: 100%; height: 660px;margin-bottom:10px;resize: none; " ng-model="edit_content" placeholder="直接输入或使用markdown语法"></textarea>
                         </div>
-                        <div class="col-md-6" ng-show="mode=='send'" style="height: 660px;overflow-y: auto;">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <label>
-                                        <h4>署上大名</h4>
-                                    </label>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="昵称" ng-model="letter.name">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="email" class="form-control form-control-block" placeholder="邮箱" ng-model="letter.email">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-6" ng-show="mode=='send'" style="min-height: 660px;">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <label>
@@ -59,7 +46,7 @@
                                     </label>
                                 </div>
                                 <div class="panel-body">
-                                    <div class="row editor-person" ng-repeat="user in users">
+                                    <div class="row editor-person" ng-repeat="user in letter.users">
                                         <div class="col-md-4">
                                             <input type="text" class="form-control" placeholder="昵称" ng-model="user.name">
                                         </div>
@@ -67,8 +54,9 @@
                                             <div class="input-group">
                                                 <input type="email" class="form-control" placeholder="邮箱" ng-model="user.email">
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-default fa fa-plus" type="button" ng-click="add()" ng-show="$index==users.length-1"></button>
-                                                    <button class="btn btn-default btn-danger fa fa-minus" type="button" ng-click="minus()" ng-show="$index!=users.length-1"></button>
+                                                    <button class="btn btn-default fa fa-plus" type="button" ng-click="add()" 
+                                                            ng-disabled="!user.name || !user.email" ng-show="$index==letter.users.length-1"></button>
+                                                    <button class="btn btn-default btn-danger fa fa-minus" type="button" ng-click="minus()" ng-show="$index!=letter.users.length-1"></button>
                                                 </span>
                                             </div>
                                         </div>
@@ -79,7 +67,7 @@
                                 <div class="panel-heading">
                                     <div class="row">
                                         <h4 class="col-md-6">
-                                            <span class="text-right">选个发送时间就能发送啦</span>
+                                            <span class="text-right">选个发送时间啦</span>
                                         </h4>
                                         <h4 class="col-md-6 text-right">
                                             <span class="text-info">{{letter.sendTime}}</span>
@@ -93,21 +81,46 @@
                                             <div class="input-group" id="send_time"></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <button class="btn btn-success btn-block btn-send" ng-click="send()">
-                                                立即发送&nbsp; <i class="fa fa-send fa-fw"></i>
-                                            </button>
+                                            <img class="send_time_deco" src="/asserts/img/time/4.jpg">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="panel panel-default">
 
-
+                                <div class="panel-heading">
+                                    <label>
+                                        <h4>署上大名就能发送</h4>
+                                    </label>
+                                    <span class="pull-right">
+                                        <button class="btn btn-success btn-sm" ng-show="mode=='send'" 
+                                                ng-disabled="!letter.from.name || !letter.from.email || !letter.sendTime"  ng-click="send()">
+                                            立即发送
+                                            &nbsp; <i class="fa fa-send fa-fw"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="昵称" ng-model="letter.from.name">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="email" class="form-control form-control-block" placeholder="邮箱" ng-model="letter.from.email">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 </html>

@@ -2,7 +2,22 @@ $routeProvider.when("/login", {
     resource: 'login/login',
     controller: 'LoginCtrl'
 });
-
+$routeProvider.when("/advice", {
+    resource: 'advice/advice',
+    controller: 'AdviceCtrl'
+});
+$routeProvider.when("/infos/about", {
+    resource: 'infos/about/about'
+});
+$routeProvider.when("/infos/agreement", {
+    resource: 'infos/agreement/agreement'
+});
+$routeProvider.when("/infos/privacy", {
+    resource: 'infos/privacy/privacy'
+});
+$routeProvider.when("/infos/disclaimer", {
+    resource: 'infos/disclaimer/disclaimer'
+});
 $routeProvider.when("/", {
     resource: 'first/first',
     controller: 'FirstCtrl',
